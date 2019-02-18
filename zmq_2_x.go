@@ -39,7 +39,7 @@ const (
 	DONTWAIT = NOBLOCK
 )
 
-// Get a context option.
+// IOThreads gets a context option.
 func (c *Context) IOThreads() (int, error) {
 	return c.iothreads, nil
 }

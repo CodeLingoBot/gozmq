@@ -275,7 +275,7 @@ func (s *Socket) SetSockOptStringNil(option StringSocketOption) error {
 	return nil
 }
 
-// Get an int option from the socket.
+// GetSockOptInt gets an int option from the socket.
 // int zmq_getsockopt (void *s, int option, void *optval, size_t *optvallen);
 func (s *Socket) GetSockOptInt(option IntSocketOption) (value int, err error) {
 	size := C.size_t(unsafe.Sizeof(value))
@@ -287,7 +287,7 @@ func (s *Socket) GetSockOptInt(option IntSocketOption) (value int, err error) {
 	return
 }
 
-// Get an int64 option from the socket.
+// GetSockOptInt64 gets an int64 option from the socket.
 // int zmq_getsockopt (void *s, int option, void *optval, size_t *optvallen);
 func (s *Socket) GetSockOptInt64(option Int64SocketOption) (value int64, err error) {
 	size := C.size_t(unsafe.Sizeof(value))
@@ -299,7 +299,7 @@ func (s *Socket) GetSockOptInt64(option Int64SocketOption) (value int64, err err
 	return
 }
 
-// Get a uint64 option from the socket.
+// GetSockOptUInt64 gets a uint64 option from the socket.
 // int zmq_getsockopt (void *s, int option, void *optval, size_t *optvallen);
 func (s *Socket) GetSockOptUInt64(option UInt64SocketOption) (value uint64, err error) {
 	size := C.size_t(unsafe.Sizeof(value))
@@ -312,7 +312,7 @@ func (s *Socket) GetSockOptUInt64(option UInt64SocketOption) (value uint64, err 
 	return
 }
 
-// Get a string option from the socket.
+// GetSockOptString gets a string option from the socket.
 // int zmq_getsockopt (void *s, int option, void *optval, size_t *optvallen);
 func (s *Socket) GetSockOptString(option StringSocketOption) (value string, err error) {
 	var buffer [1024]byte
